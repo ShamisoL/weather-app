@@ -29,6 +29,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  let fahrenheitElement = document.querySelector("#fahrenheit");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
@@ -41,6 +42,9 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  fahrenheitElement.innerHTML = Math.round(
+    (response.data.main.temp * 9) / 5 + 32
+  );
 }
 
 function search(city) {
@@ -54,6 +58,8 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
+
+search("London");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
