@@ -80,3 +80,18 @@ li::first-letter {
 .weather-forecast-temperature {
   font-size: 13px;
 }
+.btn {
+  background-color: #885df1;
+  border-color: #885df1;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #885df1;
+  border-color: #885df1;
+}
+
+.btn:hover {
+  background-color: #612aec;
+  border-color: #612aec;
+}
